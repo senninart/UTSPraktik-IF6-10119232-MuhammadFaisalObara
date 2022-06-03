@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/form"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_back"
+                android:layout_marginTop="36dp"
+                android:text="@string/form"
+                android:textColor="@color/gray_800"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_back" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="match_parent"
+                android:layout_height="94sp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/yellow_50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/form">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="@string/info"
+                    android:textColor="@color/gray_800"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="42dp"
+                    android:text="@string/deskripsi"
+                    android:textColor="@color/gray_600"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/jenis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card"
+                android:layout_marginTop="24dp"
+                android:text="@string/jenis"
+                android:textColor="@color/gray_800"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card" />
+
+            <TextView
+                android:id="@+id/harus1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="3dp"
+                android:layout_toRightOf="@id/jenis"
+                android:text="@string/harus"
+                android:textColor="@color/green_primary"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/jenis"
+                app:layout_constraintStart_toEndOf="@+id/jenis"
+                app:layout_constraintTop_toTopOf="@+id/jenis" />
+
+            <RadioGroup
+                android:id="@+id/radio_jenis"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/jenis">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/green_primary"
+                    android:text="@string/rapid"
+                    android:textColor="@color/gray_800" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/green_primary"
+                    android:text="@string/pcr"
+                    android:textColor="@color/gray_800" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tanggal_terkonfirmasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card"
+                android:layout_marginTop="18dp"
+                android:text="@string/tanggal"
+                android:textColor="@color/gray_800"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/radio_jenis" />
+
+            <TextView
+                android:id="@+id/harus2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="3dp"
+                android:layout_toRightOf="@id/jenis"
+                android:text="@string/harus"
+                android:textColor="@color/green_primary"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tanggal_terkonfirmasi"
+                app:layout_constraintStart_toEndOf="@+id/tanggal_terkonfirmasi"
+                app:layout_constraintTop_toTopOf="@+id/tanggal_terkonfirmasi" />
+
+            <EditText
+                android:id="@+id/input_taggal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/background_gray"
+                android:drawableRight="@drawable/ic_baseline_date_range_24"
+                android:hint="@string/hint_tanggal"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/tanggal_terkonfirmasi"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/nik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card"
+                android:layout_marginTop="18dp"
+                android:text="@string/nik"
+                android:textColor="@color/gray_800"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_taggal" />
+
+            <TextView
+                android:id="@+id/harus3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="3dp"
+                android:layout_toRightOf="@id/jenis"
+                android:text="@string/harus"
+                android:textColor="@color/green_primary"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/nik"
+                app:layout_constraintStart_toEndOf="@+id/nik"
+                app:layout_constraintTop_toTopOf="@+id/nik" />
+
+            <EditText
+                android:id="@+id/input_nik"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/background_gray"
+                android:hint="@string/hint_nik"
+                android:inputType="number"
+                android:padding="12dp"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/nik"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/nama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card"
+                android:layout_marginTop="18dp"
+                android:text="@string/nama"
+                android:textColor="@color/gray_800"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_nik" />
+
+            <TextView
+                android:id="@+id/harus4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="3dp"
+                android:layout_toRightOf="@id/jenis"
+                android:text="@string/harus"
+                android:textColor="@color/green_primary"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/nama"
+                app:layout_constraintStart_toEndOf="@+id/nama"
+                app:layout_constraintTop_toTopOf="@+id/nama" />
+
+            <EditText
+                android:id="@+id/input_nama"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/background_gray"
+                android:hint="@string/hint_nama"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/nama"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/tanggal_lahir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card"
+                android:layout_marginTop="18dp"
+                android:text="@string/tanggal"
+                android:textColor="@color/gray_800"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_nama" />
+
+            <TextView
+                android:id="@+id/harus7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="3dp"
+                android:layout_toRightOf="@id/jenis"
+                android:text="@string/harus"
+                android:textColor="@color/green_primary"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tanggal_terkonfirmasi"
+                app:layout_constraintStart_toEndOf="@+id/tanggal_terkonfirmasi"
+                app:layout_constraintTop_toTopOf="@+id/tanggal_terkonfirmasi" />
+
+            <EditText
+                android:id="@+id/input_tanggal_lahir"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/background_gray"
+                android:drawableRight="@drawable/ic_baseline_date_range_24"
+                android:hint="@string/hint_tanggal"
+                android:inputType="text"
+                android:padding="12dp"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/tanggal_lahir"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/jenis_kelamin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card"
+                android:layout_marginTop="24dp"
+                android:text="@string/jenkel"
+                android:textColor="@color/gray_800"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_tanggal_lahir" />
+
+            <TextView
+                android:id="@+id/harus5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="3dp"
+                android:layout_toRightOf="@id/jenis"
+                android:text="@string/harus"
+                android:textColor="@color/green_primary"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/jenis_kelamin"
+                app:layout_constraintStart_toEndOf="@+id/jenis_kelamin"
+                app:layout_constraintTop_toTopOf="@+id/jenis_kelamin" />
+
+            <RadioGroup
+                android:id="@+id/radio_jenis_kelamin"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/jenis_kelamin">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/green_primary"
+                    android:text="@string/laki"
+                    android:textColor="@color/gray_800" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/green_primary"
+                    android:text="@string/perempuan"
+                    android:textColor="@color/gray_800" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/hubungan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card"
+                android:layout_marginTop="24dp"
+                android:text="@string/hubungan"
+                android:textColor="@color/gray_800"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/radio_jenis_kelamin" />
+
+            <TextView
+                android:id="@+id/harus6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="3dp"
+                android:layout_toRightOf="@id/jenis"
+                android:text="@string/harus"
+                android:textColor="@color/green_primary"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/hubungan"
+                app:layout_constraintStart_toEndOf="@+id/hubungan"
+                app:layout_constraintTop_toTopOf="@+id/hubungan" />
+
+            <RadioGroup
+                android:id="@+id/radio_hubungan"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hubungan">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/green_primary"
+                    android:text="@string/ortu"
+                    android:textColor="@color/gray_800" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/green_primary"
+                    android:text="@string/suami_istri"
+                    android:textColor="@color/gray_800" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/green_primary"
+                    android:text="@string/anak"
+                    android:textColor="@color/gray_800" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/green_primary"
+                    android:text="@string/kerabat"
+                    android:textColor="@color/gray_800" />
+            </RadioGroup>
+
+            <CheckBox
+                android:id="@+id/check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:buttonTint="@color/green_primary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/radio_hubungan" />
+
+            <CheckedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ketentuan"
+                android:textColor="@color/gray_600"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@id/check"
+                app:layout_constraintStart_toEndOf="@id/check"
+                app:layout_constraintTop_toTopOf="@id/check" />
+
+            <Button
+                android:id="@+id/btn_selanjutnya"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="@color/green_primary"
+                android:text="@string/selanjutnya"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/check" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
