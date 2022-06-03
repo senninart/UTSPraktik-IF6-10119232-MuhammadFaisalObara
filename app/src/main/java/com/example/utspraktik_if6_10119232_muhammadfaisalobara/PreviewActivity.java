@@ -32,6 +32,8 @@ public class PreviewActivity extends AppCompatActivity {
         btnCek = findViewById(R.id.btn_cek);
         btnUbah = findViewById(R.id.btn_ubah);
 
+        dialog = new Dialog(this);
+
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,9 +62,9 @@ public class PreviewActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.berhasil_layout_dialog);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-        ImageView imageViewClosed = dialog.findViewById(R.id.btn_ok);
+        Button btnOk = dialog.findViewById(R.id.btn_ok);
 
-        imageViewClosed.setOnClickListener(new View.OnClickListener() {
+        btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
