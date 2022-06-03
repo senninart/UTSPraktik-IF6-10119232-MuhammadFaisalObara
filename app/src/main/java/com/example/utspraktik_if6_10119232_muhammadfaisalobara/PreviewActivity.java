@@ -12,6 +12,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+/*M Faisal Obara
+10119232
+IF 6
+03 Juni 2022*/
+
 public class PreviewActivity extends AppCompatActivity {
 
     ImageView btnBack;
@@ -61,7 +66,6 @@ public class PreviewActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dialog.dismiss();
-                Toast.makeText(PreviewActivity.this, "Dialog close", Toast.LENGTH_SHORT).show();
             }
         });
 
